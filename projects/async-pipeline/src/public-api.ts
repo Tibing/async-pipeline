@@ -1,1 +1,1 @@
-export { AsyncPipelineModule } from './lib/async-pipeline.module';
+export * from './lib/index';
