@@ -8,3 +8,5 @@ export * from './get/get.pipe';
 export * from './get/get.module';
 export * from './last/last.pipe';
 export * from './last/last.module';
+export * from './first/first.pipe';
+export * from './first/first.module';
