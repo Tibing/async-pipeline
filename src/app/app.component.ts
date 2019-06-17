@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { concatMap, delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,15 @@ import { Observable, of } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'AsyncPipeline';
-  stream$: Observable<string> = of('abc', 'cde');
+  stream$: Observable<{ title: string }> = of(
+    { title: 'abc' },
+    { title: 'bcd' },
+    { title: 'cde' },
+    { title: 'def' },
+    { title: 'efg' },
+    { title: 'fgh' },
+  )
+    .pipe(
+      concatMap(x => of(x).pipe(delay(1000))),
+    );
 }

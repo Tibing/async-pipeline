@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { LengthModule, LogModule, NotModule } from 'async-pipeline';
+import { GetModule, LengthModule, LogModule, NotModule } from 'async-pipeline';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
     NotModule,
     LengthModule,
     LogModule,
+    GetModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

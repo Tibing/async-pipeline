@@ -4,3 +4,5 @@ export * from './log/log.pipe';
 export * from './log/log.module';
 export * from './not/not.pipe';
 export * from './not/not.module';
+export * from './get/get.pipe';
+export * from './get/get.module';
