@@ -22,3 +22,5 @@ export * from './map-to/map-to.pipe';
 export * from './map-to/map-to.module';
 export * from './skip/skip.pipe';
 export * from './skip/skip.module';
+export * from './skip-last/skip-last.pipe';
+export * from './skip-last/skip-last.module';
