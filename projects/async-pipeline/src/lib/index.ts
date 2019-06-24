@@ -10,3 +10,7 @@ export * from './last/last.pipe';
 export * from './last/last.module';
 export * from './first/first.pipe';
 export * from './first/first.module';
+export * from './delay/delay.pipe';
+export * from './delay/delay.module';
+export * from './debounce-time/debounce-time.pipe';
+export * from './debounce-time/debounce-time.module';
