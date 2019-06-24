@@ -14,3 +14,5 @@ export * from './delay/delay.pipe';
 export * from './delay/delay.module';
 export * from './debounce-time/debounce-time.pipe';
 export * from './debounce-time/debounce-time.module';
+export * from './debounce/debounce.pipe';
+export * from './debounce/debounce.module';
