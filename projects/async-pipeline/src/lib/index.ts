@@ -16,3 +16,5 @@ export * from './debounce-time/debounce-time.pipe';
 export * from './debounce-time/debounce-time.module';
 export * from './debounce/debounce.pipe';
 export * from './debounce/debounce.module';
+export * from './distinct-until-changed/distinct-until-changed.pipe';
+export * from './distinct-until-changed/distinct-until-changed.module';
