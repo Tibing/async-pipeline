@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 @Component({
   selector: 'app-root',
   template: `
-    {{ title$ | length | not | async }}
+    {{ title$ | skip:3 | length | not | async }}
   `,
 })
 export class AppComponent {
