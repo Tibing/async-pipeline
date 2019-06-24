@@ -1,5 +1,5 @@
 {
-  "name": "async-pipeline",
+  "name": "ngx-async-pipeline",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

@@ -1,27 +1,33 @@
 # AsyncPipeline
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+## Do you still use streams in an old fashioned way? 🧐
 
-## Development server
+![alt text](assets/old-way.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Async pipeline introduces a brand new way to use streams in Angular templates.
+We bring genuine and custom **RxJS** operators in Angular templates templates! 🔥
 
-## Code scaffolding
+![alt text](assets/new-way.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting started
 
-## Build
+- `npm i async-pipeline`
+- Import required modules:
+```
+import { NotModule, LengthModule } from 'ngx-async-pipeline';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+@NgModule({
+  imports: [
+    NotModule,
+    LengthModule,
+  ],
+})
+export class AppModule {}
+```
 
-## Running unit tests
+- Use pipe
+```
+<app-errors *ngIf="errors$ | length | not | async></app-errors>
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- Be awesome 🌈
