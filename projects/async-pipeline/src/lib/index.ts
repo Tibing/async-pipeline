@@ -36,3 +36,7 @@ export * from './take-until/take-until.pipe';
 export * from './take-until/take-until.module';
 export * from './take-while/take-while.pipe';
 export * from './take-while/take-while.module';
+export * from './throttle-time/throttle-time.pipe';
+export * from './throttle-time/throttle-time.module';
+export * from './throttle/throttle.pipe';
+export * from './throttle/throttle.module';
