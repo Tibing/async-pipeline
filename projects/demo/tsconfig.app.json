@@ -1,10 +1,10 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./out-tsc/app",
+    "outDir": "../../out-tsc/app",
     "types": [],
     "paths": {
-      "async-pipeline": [
+      "ngx-async-pipeline": [
         "dist/async-pipeline"
       ]
     }

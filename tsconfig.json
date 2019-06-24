@@ -17,14 +17,6 @@
     "lib": [
       "es2018",
       "dom"
-    ],
-    "paths": {
-      "async-pipeline": [
-        "dist/async-pipeline"
-      ],
-      "async-pipeline/*": [
-        "dist/async-pipeline/*"
-      ]
-    }
+    ]
   }
 }

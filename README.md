@@ -11,7 +11,7 @@ We bring genuine and custom **RxJS** operators in Angular templates templates! ð
 
 ## Getting started
 
-- `npm i async-pipeline`
+- `npm i ngx-async-pipeline`
 - Import required modules:
 ```
 import { NotModule, LengthModule } from 'ngx-async-pipeline';
@@ -31,3 +31,31 @@ export class AppModule {}
 ```
 
 - Be awesome ðŸŒˆ
+
+## Available pipes
+
+### Custom
+- length
+- log
+- not
+- get
+
+### RxJS
+- debounce
+- debounce-time
+- delay
+- distinct-until-changed
+- first
+- last
+- map-to
+- pairwise
+- skip
+- skip-last
+- skip-until
+- skip-while
+- take
+- take-last
+- take-until
+- take-while
+- throttle
+- throttle-time
