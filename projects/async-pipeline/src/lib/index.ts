@@ -40,3 +40,5 @@ export * from './throttle-time/throttle-time.pipe';
 export * from './throttle-time/throttle-time.module';
 export * from './throttle/throttle.pipe';
 export * from './throttle/throttle.module';
+export * from './pairwise/pairwise.pipe';
+export * from './pairwise/pairwise.module';
