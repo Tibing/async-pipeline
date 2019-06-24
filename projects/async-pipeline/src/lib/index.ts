@@ -18,3 +18,5 @@ export * from './debounce/debounce.pipe';
 export * from './debounce/debounce.module';
 export * from './distinct-until-changed/distinct-until-changed.pipe';
 export * from './distinct-until-changed/distinct-until-changed.module';
+export * from './map-to/map-to.pipe';
+export * from './map-to/map-to.module';
