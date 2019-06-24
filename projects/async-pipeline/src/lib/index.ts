@@ -20,3 +20,5 @@ export * from './distinct-until-changed/distinct-until-changed.pipe';
 export * from './distinct-until-changed/distinct-until-changed.module';
 export * from './map-to/map-to.pipe';
 export * from './map-to/map-to.module';
+export * from './skip/skip.pipe';
+export * from './skip/skip.module';
