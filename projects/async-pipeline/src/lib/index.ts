@@ -24,3 +24,5 @@ export * from './skip/skip.pipe';
 export * from './skip/skip.module';
 export * from './skip-last/skip-last.pipe';
 export * from './skip-last/skip-last.module';
+export * from './skip-until/skip-until.pipe';
+export * from './skip-until/skip-until.module';
