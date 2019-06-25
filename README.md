@@ -136,7 +136,7 @@ export class AppModule {}
 @Component({
   template: `
     <div *ngIf="data$ | length | not | async">
-      ... render something here
+      No Data
     </div>
   `,
 })
