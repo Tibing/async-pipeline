@@ -15,13 +15,14 @@ Useful custom operators included!
 - Import required modules:
 ```typescript
 import { CommonModule } from '@angular/common';
-import { NotModule, LengthModule } from 'ngx-async-pipeline';
+import { NotModule, LengthModule, SkipModule } from 'ngx-async-pipeline';
 
 @NgModule({
   imports: [
     CommonModule,
     NotModule,
     LengthModule,
+    SkipModule,
   ],
 })
 export class AppModule {}
