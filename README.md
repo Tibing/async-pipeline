@@ -468,3 +468,11 @@ export class AppComponent {
 ```
 
 [Official documentation for *throttle* operator.](https://rxjs.dev/api/operators/throttle)
+
+
+## How can I support the developer?
+
+- Create pull requests, submit bugs, suggest new features or documentation updates 🔧
+- Star my GitHub repos ⭐️
+- Read me on [Medium](https://medium.com/@nik.poltoratsky)
+- Follow me on [Twitter](https://twitter.com/nikpoltoratsky) 🐾
