@@ -195,7 +195,7 @@ export class AppModule {}
   `
 })
 export class AppComponent {
-  someArrayOrString$: Observable<string> = of([1, 2, 3]);
+  someArrayOrString$: Observable<Array<number>>> = of([1, 2, 3]);
 }
 ```
 
