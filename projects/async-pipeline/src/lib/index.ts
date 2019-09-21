@@ -6,6 +6,8 @@ export * from './not/not.pipe';
 export * from './not/not.module';
 export * from './get/get.pipe';
 export * from './get/get.module';
+export * from './is-empty/is-empty.module';
+export * from './is-empty/is-empty.pipe';
 export * from './last/last.pipe';
 export * from './last/last.module';
 export * from './first/first.pipe';
