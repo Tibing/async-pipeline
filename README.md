@@ -4,7 +4,7 @@ Do you still use streams in an old fashioned way? 🧐
 
 ![alt text](assets/old-way.png)
 
-Async pipeline bring **RxJS** operators in Angular templates! 🔥 
+Async pipeline bring **RxJS** operators in Angular templates! 🔥
 Useful custom operators included!
 
 ![alt text](assets/new-way.png)
@@ -13,22 +13,19 @@ Useful custom operators included!
 
 - `npm i ngx-async-pipeline`
 - Import required modules:
+
 ```typescript
 import { CommonModule } from '@angular/common';
 import { NotModule, LengthModule, SkipModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NotModule,
-    LengthModule,
-    SkipModule,
-  ],
+  imports: [CommonModule, NotModule, LengthModule, SkipModule]
 })
 export class AppModule {}
 ```
 
 - Use pipes
+
 ```html
 <app-errors *ngIf="errors$ | skip:3 | length | not | async"></app-errors>
 ```
@@ -45,6 +42,7 @@ Here's a list of custom pipes introduced to bring simplicity and clarity to Angu
 - [log](#logpipe)
 - [not](#notpipe)
 - [get](#getpipe)
+- [isEmpty](#isemptypipe)
 
 ### RxJS
 
@@ -78,7 +76,7 @@ Here's a list of **RxJS** operators provided as pipes. Each **RxJS** pipe has th
 import { LengthModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ LengthModule ],
+  imports: [LengthModule]
 })
 export class AppModule {}
 
@@ -86,15 +84,15 @@ export class AppModule {}
 @Component({
   template: `
     {{ title$ | length | async }}
-  `,
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-**length** operator has to be used to retrieve the length of the *string* or *array*
-**title$ | length**.
+**length** operator has to be used to retrieve the length of the _string_ or _array_
+**title\$ | length**.
 
 ### LogPipe
 
@@ -103,7 +101,7 @@ export class AppComponent {
 import { LogModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ LogModule ],
+  imports: [LogModule]
 })
 export class AppModule {}
 
@@ -111,15 +109,15 @@ export class AppModule {}
 @Component({
   template: `
     {{ title$ | log | async }}
-  `,
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-**log** operator will *console.log* each value from the stream
-**title$ | log**.
+**log** operator will _console.log_ each value from the stream
+**title\$ | log**.
 
 ### NotPipe
 
@@ -128,7 +126,7 @@ export class AppComponent {
 import { NotModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ NotModule ],
+  imports: [NotModule]
 })
 export class AppModule {}
 
@@ -138,20 +136,20 @@ export class AppModule {}
     <div *ngIf="data$ | length | not | async">
       No Data
     </div>
-  `,
+  `
 })
 export class AppComponent {
   data$: Observable<string[]> = of([
     'Hello, Async Pipeline!',
     'Some another string',
     'And one more string',
-    'And so on...',
+    'And so on...'
   ]);
 }
 ```
 
 **not** operator will negate the value from the stream using **!** operator
-**condition$ | not**
+**condition\$ | not**
 
 ### GetPipe
 
@@ -160,15 +158,15 @@ export class AppComponent {
 import { GetModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ GetModule ],
+  imports: [GetModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ data$ | get:'title' | async }}
-  `,
+    {{ data$ | get: 'title' | async }}
+  `
 })
 export class AppComponent {
   data$: Observable<{ title: string }> = of({ title: 'Here is a title!' });
@@ -179,6 +177,31 @@ Using **get** pipe you can get a value from an object by key provided as a param
 **get:'title'**. Or, **get** could be used to retrieve a specific item from an array
 **get:3**.
 
+### IsEmptyPipe
+
+```typescript
+// app.module.ts
+import { IsEmptyPipe } from 'ngx-async-pipeline';
+
+@NgModule({
+  imports: [IsEmptyModule]
+})
+export class AppModule {}
+
+// app.component.ts
+@Component({
+  template: `
+    {{ someArrayOrString$ | isEmpty | async }}
+  `
+})
+export class AppComponent {
+  someArrayOrString$: Observable<string> = of([1, 2, 3]);
+}
+```
+
+**isEmpty** operator has to be used to retrieve if a _string_ or _array_ is empty (e.g. Array.length / String.length equals 0)
+**arrayOrString\$ | isEmpty**.
+
 ## RxJS pipes
 
 ### DebounceTimePipe
@@ -188,22 +211,22 @@ Using **get** pipe you can get a value from an object by key provided as a param
 import { DebounceTimeModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ DebounceTimeModule ],
+  imports: [DebounceTimeModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | debounceTime:1000 | async }}
-  `,
+    {{ title$ | debounceTime: 1000 | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *debounceTime* operator.](https://rxjs.dev/api/operators/debounceTime)
+[Official documentation for _debounceTime_ operator.](https://rxjs.dev/api/operators/debounceTime)
 
 ### DelayPipe
 
@@ -212,22 +235,22 @@ export class AppComponent {
 import { DelayModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ DelayModule ],
+  imports: [DelayModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | delay:1000 | async }}
-  `,
+    {{ title$ | delay: 1000 | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *delay* operator.](https://rxjs.dev/api/operators/delay)
+[Official documentation for _delay_ operator.](https://rxjs.dev/api/operators/delay)
 
 ### DistinctUntilChangedPipe
 
@@ -236,7 +259,7 @@ export class AppComponent {
 import { DistinctUntilChangedModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ DistinctUntilChangedModule ],
+  imports: [DistinctUntilChangedModule]
 })
 export class AppModule {}
 
@@ -244,14 +267,14 @@ export class AppModule {}
 @Component({
   template: `
     {{ title$ | distinctUntilChanged | async }}
-  `,
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *distinctUntilChanged* operator.](https://rxjs.dev/api/operators/distinctUntilChanged)
+[Official documentation for _distinctUntilChanged_ operator.](https://rxjs.dev/api/operators/distinctUntilChanged)
 
 ### FirstPipe
 
@@ -260,22 +283,22 @@ export class AppComponent {
 import { FirstModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ FirstModule ],
+  imports: [FirstModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | first:3 | async }}
-  `,
+    {{ title$ | first: 3 | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *first* operator.](https://rxjs.dev/api/operators/first)
+[Official documentation for _first_ operator.](https://rxjs.dev/api/operators/first)
 
 ### LastPipe
 
@@ -284,22 +307,22 @@ export class AppComponent {
 import { LastModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ LastModule ],
+  imports: [LastModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | last:3 | async }}
-  `,
+    {{ title$ | last: 3 | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *last* operator.](https://rxjs.dev/api/operators/last)
+[Official documentation for _last_ operator.](https://rxjs.dev/api/operators/last)
 
 ### MapToPipe
 
@@ -308,22 +331,22 @@ export class AppComponent {
 import { MapToModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ MapToModule ],
+  imports: [MapToModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | mapTo:'some other string' | async }}
-  `,
+    {{ title$ | mapTo: 'some other string' | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *mapTo* operator.](https://rxjs.dev/api/operators/mapTo)
+[Official documentation for _mapTo_ operator.](https://rxjs.dev/api/operators/mapTo)
 
 ### PairwisePipe
 
@@ -332,7 +355,7 @@ export class AppComponent {
 import { PairwiseModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ PairwiseModule ],
+  imports: [PairwiseModule]
 })
 export class AppModule {}
 
@@ -340,14 +363,14 @@ export class AppModule {}
 @Component({
   template: `
     {{ title$ | pairwise | async }}
-  `,
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *pairwise* operator.](https://rxjs.dev/api/operators/pairwise)
+[Official documentation for _pairwise_ operator.](https://rxjs.dev/api/operators/pairwise)
 
 ### SkipPipe
 
@@ -356,22 +379,22 @@ export class AppComponent {
 import { SkipModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ SkipModule ],
+  imports: [SkipModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | skip:3 | async }}
-  `,
+    {{ title$ | skip: 3 | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *skip* operator.](https://rxjs.dev/api/operators/skip)
+[Official documentation for _skip_ operator.](https://rxjs.dev/api/operators/skip)
 
 ### SkipLastPipe
 
@@ -380,22 +403,22 @@ export class AppComponent {
 import { SkipLastModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ SkipLastModule ],
+  imports: [SkipLastModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | skipLast:3 | async }}
-  `,
+    {{ title$ | skipLast: 3 | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *skipLast* operator.](https://rxjs.dev/api/operators/skipLast)
+[Official documentation for _skipLast_ operator.](https://rxjs.dev/api/operators/skipLast)
 
 ### TakePipe
 
@@ -404,22 +427,22 @@ export class AppComponent {
 import { TakeModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ TakeModule ],
+  imports: [TakeModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | take:3 | async }}
-  `,
+    {{ title$ | take: 3 | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *take* operator.](https://rxjs.dev/api/operators/take)
+[Official documentation for _take_ operator.](https://rxjs.dev/api/operators/take)
 
 ### TakeLastPipe
 
@@ -428,22 +451,22 @@ export class AppComponent {
 import { TakeLastModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ TakeLastModule ],
+  imports: [TakeLastModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | takeLast:3 | async }}
-  `,
+    {{ title$ | takeLast: 3 | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *takeLast* operator.](https://rxjs.dev/api/operators/takeLast)
+[Official documentation for _takeLast_ operator.](https://rxjs.dev/api/operators/takeLast)
 
 ### ThrottlePipe
 
@@ -452,23 +475,22 @@ export class AppComponent {
 import { ThrottleModule } from 'ngx-async-pipeline';
 
 @NgModule({
-  imports: [ ThrottleModule ],
+  imports: [ThrottleModule]
 })
 export class AppModule {}
 
 // app.component.ts
 @Component({
   template: `
-    {{ title$ | throttle:1000 | async }}
-  `,
+    {{ title$ | throttle: 1000 | async }}
+  `
 })
 export class AppComponent {
   title$: Observable<string> = of('Hello, Async Pipeline!');
 }
 ```
 
-[Official documentation for *throttle* operator.](https://rxjs.dev/api/operators/throttle)
-
+[Official documentation for _throttle_ operator.](https://rxjs.dev/api/operators/throttle)
 
 ## How can I support the developer?
 
